@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard General - Control Portuario</title>
+    <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Style-Dash1.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+            <nav class="nav-menu">
+                <a href="Dashboard1.html">Servicios</a>
+                <a href="#tecnologia">Tecnología</a>
+                <a href="#infraestructura">Infraestructura</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#cotizacion" class="btn-login">Formulario </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <main class="main-content">
+            
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon icon-vessels">🚢</div>
+                    <div class="kpi-data">
+                        <h3>14</h3>
+                        <p>Buques en Puerto Hoy</p>
+                    </div>
+                </div>
+
+                <div class="kpi-cardHighlight">
+                    <div class="kpi-icon icon-occupancy">⚓</div>
+                    <div class="kpi-data">
+                        <h3>75%</h3>
+                        <p>Ocupación de Muelles</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon icon-tonnage">⚖️</div>
+                    <div class="kpi-data">
+                        <h3>12,450 T</h3>
+                        <p>Movilizadas esta Semana</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-grid">
+                <div class="chart-card">
+                    <h3>Tipos de Carga Movilizados</h3>
+                    <p class="chart-subtitle">Distribución porcentual de la carga actual</p>
+                    <div class="pie-chart-wrapper">
+                        <div class="css-pie-chart"></div>
+                        <ul class="chart-legend">
+                            <li><span class="legend-color atun"></span> Atún (55%)</li>
+                            <li><span class="legend-color granel"></span> Granel (25%)</li>
+                            <li><span class="legend-color vehiculos"></span> Vehículos (20%)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Flujo Mensual de Barcos</h3>
+                    <p class="chart-subtitle">Comparativa del primer semestre</p>
+                    <div class="bar-chart-wrapper">
+                        <div class="bar-container">
+                            <div class="bar" style="height: 40%;" data-value="45"></div>
+                            <span class="bar-label">Ene</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="height: 60%;" data-value="62"></div>
+                            <span class="bar-label">Feb</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="height: 85%;" data-value="90"></div>
+                            <span class="bar-label">Mar</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="height: 70%;" data-value="75"></div>
+                            <span class="bar-label">Abr</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="height: 95%;" data-value="110"></div>
+                            <span class="bar-label">May</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar highlight" style="height: 75%;" data-value="82"></div>
+                            <span class="bar-label">Jun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card api-weather-card">
+                    <h3>Condiciones de Mar en Vivo</h3>
+                    <p class="chart-subtitle">Datos Satelitales - Puerto de Manta</p>
+                    <div class="weather-widget-grid">
+                        <div class="weather-item">
+                            <span class="weather-icon">🌊</span>
+                            <div class="weather-info">
+                                <h4 id="wave-height">Cargando...</h4>
+                                <p>Altura de Olas</p>
+                            </div>
+                        </div>
+                        <div class="weather-item">
+                            <span class="weather-icon">💨</span>
+                            <div class="weather-info">
+                                <h4 id="wind-speed">Cargando...</h4>
+                                <p>Velocidad Viento</p>
+                            </div>
+                        </div>
+                        <div class="weather-item">
+                            <span class="weather-icon">🌡️</span>
+                            <div class="weather-info">
+                                <h4 id="sea-temperature">Cargando...</h4>
+                                <p>Temp. del Agua</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="api-status-badge">API: StormGlass.io</span>
+                </div>
+            </section>
+
+            <section class="alerts-section">
+                <div class="alerts-header">
+                    <h3>⚠️ Notificaciones y Alertas del Puerto</h3>
+                    <span class="alert-badge">2 Críticas</span>
+                </div>
+                <div class="alerts-list">
+                    <div class="alert-item alert-danger">
+                        <div class="alert-icon">🚨</div>
+                        <div class="alert-text">
+                            <strong>Buque "Albacora II"</strong> detecta un retraso de zarpe estimado en 4 horas. Afecta ventana de muelle 3.
+                            <span class="alert-time">Hace 5 min</span>
+                        </div>
+                    </div>
+                    <div class="alert-item alert-warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-text">
+                            <strong>Muelle de Carga Norte</strong> reporta alta densidad de tráfico marítimo entrante. Monitorear velocidad de remolcadores.
+                            <span class="alert-time">Hace 18 min</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="/TRABAJO_FINAL/SCRIPT/Script-Dash1.js"></script>
+</body>
+</html>
