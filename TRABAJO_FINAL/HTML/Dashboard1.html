@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard General - Control Portuario</title>
     <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Style-Dash1.css">
+    <script>
+    window.addEventListener('load', function() {
+        const botonLogin = document.querySelector('.btn-login');
+        
+        if (botonLogin) {
+            if (localStorage.getItem('estaLogueado') === 'true') {
+                botonLogin.textContent = "Cerrar Sesión"; 
+                botonLogin.setAttribute('href', '#');  
+                
+                botonLogin.onclick = function() {
+                    localStorage.removeItem('estaLogueado');
+                    window.location.href = 'Index.html';
+                };
+            } else {
+                botonLogin.textContent = "Iniciar Sesión";
+                botonLogin.setAttribute('href', 'inicioSesion.html');
+            }
+        }
+    });
+</script>
 </head>
 <body>
     
@@ -13,11 +33,11 @@
             <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
             <nav class="nav-menu">
                 <a href="Dashboard1.html">Servicios</a>
-                <a href="#tecnologia">Tecnología</a>
+                <a href="control-atraques.html">Control de Atraques</a>
                 <a href="#infraestructura">Infraestructura</a>
             </nav>
             <div class="nav-actions">
-                <a href="#cotizacion" class="btn-login">Formulario </a>
+                <a href="#cotizacion" class="btn-login">Iniciar Sesion</a>
             </div>
         </div>
     </header>
