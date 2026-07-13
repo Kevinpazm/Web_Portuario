@@ -5,26 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovación en Control Portuario</title>
     <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Style-principal.css">
-    <script>
-    window.addEventListener('load', function() {
-        const botonLogin = document.querySelector('.btn-login');
-        
-        if (botonLogin) {
-            if (localStorage.getItem('estaLogueado') === 'true') {
-                botonLogin.textContent = "Cerrar Sesión"; 
-                botonLogin.setAttribute('href', '#');  
-                
-                botonLogin.onclick = function() {
-                    localStorage.removeItem('estaLogueado');
-                    window.location.href = 'Index.html';
-                };
-            } else {
-                botonLogin.textContent = "Iniciar Sesión";
-                botonLogin.setAttribute('href', 'inicioSesion.html');
-            }
-        }
-    });
-</script>
+    <script <source src="/TRABAJO_FINAL/SCRIPT/script-login.js" type="">></script>
 </head>
 <body>
 
