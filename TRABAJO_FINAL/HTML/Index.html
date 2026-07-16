@@ -5,23 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovación en Control Portuario</title>
     <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Style-principal.css">
-    <script <source src="/TRABAJO_FINAL/SCRIPT/script-login.js" type="">></script>
 </head>
 <body>
 
     <header class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">TPM Smart<span>Port</span></a>
-            <nav class="nav-menu">
-                <a href="Dashboard1.html">Servicios</a>
+            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
                 <a href="control-atraques.html">Control de atraques</a>
-                <a href="#infraestructura">Infraestructura</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="inicioSesion.html" class="btn-login">Iniciar Sesión</a>
             </nav>
-            <div class="nav-actions">
-                <a href="inicioSesion.html" class="btn-login">Iniciar Sesion </a>
-            </div>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
         </div>
     </header>
+    <div class="side-menu" id="side-menu">
+    <div class="side-header">
+        <span>TPM SmartPort</span>
+        <button id="close-menu">✕</button>
+    </div>
+    <a href="Estado-Del-Puerto.html">🚢 Estado del Puerto</a>
+    <a href="control-atraques.html">⚓ Control de atraques</a>
+    <a href="Servicios.html">📦 Servicios</a>
+    <hr>
+    <a href="inicioSesion.html" class="btn-login side-login">
+        👤 Iniciar Sesión
+    </a>
+</div>
+<div class="overlay" id="overlay"></div>
 
     <section class="hero-section">
         <div class="hero-overlay"></div>
@@ -34,39 +46,42 @@
     <section id="servicios" class="services-section">
         <div class="section-title">
             <h2>Nuestras Soluciones Tecnológicas</h2>
-            <p>Herramientas avanzadas diseñadas para optimizar la eficiencia y seguridad del puerto.</p>
+            <p>TPM SmartPort integra herramientas digitales para mejorar la administración de las operaciones marítimas del Puerto de Manta, proporcionando información en tiempo real, monitoreo de embarcaciones, control de atraques y análisis operativo que contribuyen a una gestión eficiente, segura y moderna.</p>
         </div>
 
         <div class="services-grid">
             <div class="service-card">
                 <div class="card-icon">🚢</div>
                 <h3>Control de Tráfico</h3>
-                <p>Monitoreo e identificación de buques en tiempo real mediante sistemas ATS avanzados para evitar cuellos de botella.</p>
+                <p>Supervisión en tiempo real del ingreso y salida de embarcaciones mediante sistemas de monitoreo marítimo. 
+                    Permite optimizar la navegación, reducir tiempos de espera y garantizar una operación segura dentro del Puerto de Manta.</p>
             </div>
             <div class="service-card">
                 <div class="card-icon">🐟</div>
                 <h3>Logística de Carga</h3>
-                <p>Especialistas en la descarga y distribución de atún y productos premium bajo estrictos estándares térmicos.</p>
+                <p>Gestión eficiente de la carga de exportación e importación, incluyendo productos pesqueros, contenedores, carga a granel y mercancía general. 
+                    El sistema optimiza los procesos de recepción, almacenamiento y despacho.</p>
             </div>
             <div class="service-card">
-                <div class="card-icon">⚡</div>
-                <h3>Alertas Inteligentes</h3>
-                <p>Sistemas automatizados que notifican retrasos de zarpe, densidad de tráfico y ventanas operativas críticas.</p>
+                <div class="card-icon">🌊</div>
+                <h3>Estado Marítimo</h3>
+                <p>Consulta en tiempo real de las condiciones del mar, altura de las olas, velocidad del viento y temperatura del agua para apoyar la planificación de las operaciones portuarias y la seguridad de la navegación.</p>
             </div>
             <div class="service-card">
-                <div class="card-icon">⚡</div>
-                <h3>Alertas Inteligentes</h3>
-                <p>Sistemas automatizados que notifican retrasos de zarpe, densidad de tráfico y ventanas operativas críticas.</p>
+                <div class="card-icon">⚓</div>
+                <h3>Gestión de Atraques</h3>
+                <p>Administración inteligente de los muelles disponibles mediante la asignación de espacios de atraque según la disponibilidad, 
+                    el tipo de embarcación y la prioridad operativa, reduciendo tiempos de espera.</p>
             </div>
             <div class="service-card">
-                <div class="card-icon">⚡</div>
-                <h3>Alertas Inteligentes</h3>
-                <p>Sistemas automatizados que notifican retrasos de zarpe, densidad de tráfico y ventanas operativas críticas.</p>
+                <div class="card-icon">📊</div>
+                <h3>Indicadores Operativos</h3>
+                <p>Visualización de indicadores del puerto como número de buques atendidos, toneladas movilizadas, ocupación de muelles y movimiento mensual de carga para facilitar la toma de decisiones.</p>
             </div>
             <div class="service-card">
-                <div class="card-icon">⚡</div>
+                <div class="card-icon">🔔</div>
                 <h3>Alertas Inteligentes</h3>
-                <p>Sistemas automatizados que notifican retrasos de zarpe, densidad de tráfico y ventanas operativas críticas.</p>
+                <p>Sistema automático de notificaciones sobre cambios en las condiciones meteorológicas, congestión portuaria, retrasos operativos y eventos relevantes que puedan afectar las actividades del puerto.</p>
             </div>
         </div>
     </section>
@@ -107,6 +122,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="/TRABAJO_FINAL/SCRIPT/Menu.js"></script>
+    <script src="/TRABAJO_FINAL/SCRIPT/script-login.js"></script>
 
 </body>
 </html>

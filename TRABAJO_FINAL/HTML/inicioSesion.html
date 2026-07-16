@@ -12,7 +12,7 @@
 
     if (correo.checkValidity() && password.checkValidity()) {
         localStorage.setItem('estaLogueado', 'true');
-        window.location.href = 'Index.html';
+        window.location.href = 'Estado-Del-Puerto.html';
     } else {
         correo.reportValidity();
         password.reportValidity();
@@ -24,10 +24,12 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
-            <nav class="nav-menu">
-                <a href="Dashboard1.html">Servicios</a>
+        <!-- Botón hamburguesa -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
                 <a href="control-atraques.html">Control de atraques</a>
-                <a href="#infraestructura">Infraestructura</a>
+                <a href="Servicios.html">Servicios</a>
             </nav>
         </div>
     </header>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - TPM SmartPort</title>
+    <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Servicios.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
+                <a href="control-atraques.html">Control de atraques</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="inicioSesion.html" class="btn-login">Iniciar Sesión</a>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+    </header>
+    <div class="side-menu" id="side-menu">
+    <div class="side-header">
+        <span>TPM SmartPort</span>
+        <button id="close-menu">✕</button>
+    </div>
+    <a href="Estado-Del-Puerto.html">🚢 Estado del Puerto</a>
+    <a href="control-atraques.html">⚓ Control de atraques</a>
+    <a href="Servicios.html">📦 Servicios</a>
+    <hr>
+    <a href="inicioSesion.html" class="btn-login side-login">
+        👤 Iniciar Sesión
+    </a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+    <section class="contenedor">
+        <h1>Servicios Portuarios</h1>
+            <div class="grid">
+                <div class="card">
+                    <h2>📦 Descarga de Contenedores</h2>
+                    <p>Manipulación segura mediante grúas especializadas.</p>
+                    <h3>$250</h3>
+                    <span class="estado">Disponible</span>
+                    <button onclick="abrirModal('Descarga de Contenedores',250)">Contratar</button>
+                </div>
+                <div class="card">
+                    <h2>🏗 Almacenamiento</h2>
+                    <p>Bodegas y patios con vigilancia.</p>
+                    <h3>$30 / día</h3>
+                    <span class="estado">Disponible</span>
+                    <button onclick="abrirModal('Almacenamiento',30)">Contratar</button>
+                </div>
+                <div class="card">
+                    <h2>🚛 Transporte Interno</h2>
+                    <p>Movilización de mercancías.</p>
+                    <h3>$180</h3>
+                    <span class="estado">Disponible</span>
+                    <button onclick="abrirModal('Transporte Interno',180)">Contratar</button>
+                </div>
+                <div class="card">
+                    <h2>⚓ Reserva de Muelle</h2>
+                    <p>Reserva anticipada de atraque.</p>
+                    <h3>$500</h3>
+                    <span class="estado amarillo">Pocas plazas</span>
+                    <button onclick="abrirModal('Reserva de Muelle',500)">Contratar</button>
+                </div>
+                <div class="card">
+                    <h2>🛡 Inspección Aduanera</h2>
+                    <p>Inspección documental y física.</p>
+                    <h3>$120</h3>
+                    <span class="estado">Disponible</span>
+                    <button onclick="abrirModal('Inspección Aduanera',120)">Contratar</button>
+                </div>
+                <div class="card">
+                    <h2>🚢 Grúa Portuaria</h2>
+                    <p>Operación para carga pesada.</p>
+                    <h3>$650 / hora</h3>
+                    <span class="estado">Disponible</span>
+                    <button onclick="abrirModal('Grúa Portuaria',650)">Contratar</button>
+                </div>
+            </div>
+        <h2 class="tituloTabla">Historial de Servicios</h2>
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Solicitud</th>
+                    <th>Servicio</th>
+                    <th>Pago</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <div class="modal" id="modal">
+        <div class="contenido">
+            <h2>Contratar Servicio</h2>
+            <p id="nombreServicio"></p>
+            <p id="precioServicio"></p>
+            <label>
+                <input type="radio" name="pago" value="Transferencia" checked>Transferencia</label>
+            <label>
+            <input type="radio" name="pago" value="Efectivo">Efectivo</label>
+
+            <div class="botones">
+                <button onclick="confirmar()">Confirmar</button>
+                <button onclick="cerrar()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+<div id="modalLogin" class="modal-login">
+    <div class="modal-login-content">
+        <div class="modal-icon">⚓</div>
+        <h2>Acceso Restringido</h2>
+        <p>
+            Esta sección pertenece a TPM SmartPort. Inicia sesión para continuar.
+        </p>
+        <button onclick="irLogin()">Iniciar Sesión</button>
+        <span onclick="cerrarModal()">Cancelar</span>
+    </div>
+</div>
+    <script src="/TRABAJO_FINAL/SCRIPT/script-login.js"></script>
+    <script src="/TRABAJO_FINAL/SCRIPT/Servicios.js"></script>
+    <script src="/TRABAJO_FINAL/SCRIPT/Menu.js"></script>
+    <script>
+       protegerPagina();
+    </script>
+
+</body>
+</html>

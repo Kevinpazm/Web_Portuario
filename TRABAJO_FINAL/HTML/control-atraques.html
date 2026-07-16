@@ -5,23 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Control de Atraques - Puerto de Manta</title>
   <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/control-atraques.css">
-  <script <source src="/TRABAJO_FINAL/SCRIPT/script-login.js" type="">></script>
 </head>
 <body class="fondo-pagina">
-
+  
   <header class="navbar">
-        <div class="nav-container">
-            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
-            <nav class="nav-menu">
-                <a href="Dashboard1.html">Servicios</a>
-                <a href="control-atraques.html">Control de atraques</a>
-                <a href="#infraestructura">Infraestructura</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="inicioSesion.html" class="btn-login">Iniciar Sesion </a>
-            </div>
-        </div>
-    </header>
+    <div class="nav-container">
+      <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+      <nav class="nav-menu" id="nav-menu">
+          <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
+          <a href="control-atraques.html">Control de atraques</a>
+          <a href="Servicios.html">Servicios</a>
+          <a href="inicioSesion.html" class="btn-login">Iniciar Sesión</a>
+      </nav>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+  </header>
+    <div class="side-menu" id="side-menu">
+      <div class="side-header">
+        <span>TPM SmartPort</span>
+        <button id="close-menu">✕</button>
+      </div>
+    <a href="Estado-Del-Puerto.html">🚢 Estado del Puerto</a>
+    <a href="control-atraques.html">⚓ Control de atraques</a>
+    <a href="Servicios.html">📦 Servicios</a>
+    <hr>
+    <a href="inicioSesion.html" class="btn-login side-login">
+        👤 Iniciar Sesión
+    </a>
+</div>
+<div class="overlay" id="overlay"></div>
 
   <div class="contenedor">
     
@@ -144,7 +156,17 @@
       </form>
     </div>
   </div>
-
+<div id="modalLogin" class="modal-login">
+    <div class="modal-login-content">
+        <div class="modal-icon">⚓</div>
+        <h2>Acceso Restringido</h2>
+        <p>
+            Esta sección pertenece a TPM SmartPort. Inicia sesión para continuar.
+        </p>
+        <button onclick="irLogin()">Iniciar Sesión</button>
+        <span onclick="cerrarModal()">Cancelar</span>
+    </div>
+</div>
   <script>
     function abrirModal() {
       document.getElementById('modal-asignar').style.display = 'flex';
@@ -183,6 +205,11 @@
       cerrarModal();
     }
   </script>
-
+  <script src="/TRABAJO_FINAL/SCRIPT/Menu.js"></script>
+  <script src="/TRABAJO_FINAL/SCRIPT/script-login.js"></script>
+  <script>
+       protegerPagina();
+    </script>
+  
 </body>
 </html>

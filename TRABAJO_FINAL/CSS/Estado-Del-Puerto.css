@@ -179,252 +179,189 @@ body {
     opacity:1;
     visibility:visible;
 }
-.contenedor {
-  max-width: 1140px;
-  /* Se agrega margen superior de 100px para que el navbar fijo no tape el contenido */
-  margin: 100px auto 0 auto; 
-  padding: 0 24px 40px 24px;
+/* ==========================================================
+   ESTADO DEL PUERTO
+========================================================== */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.port-status-section{
+    background:#f8fafc;
+    padding:80px 20px;
 }
 
-/* Encabezado del Panel Operativo */
-.encabezado-seccion h2 {
-  font-size: 22px;
-  color: #1f2937;
+.port-status-card{
+
+    max-width:900px;
+    margin:auto;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:45px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    border:1px solid #e2e8f0;
+
 }
 
-.encabezado-seccion p {
-  color: #6b7280;
-  font-size: 14px;
-  margin: 0 0 24px 0;
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
 }
 
-/* --- GRID DE LAS TARJETAS --- */
-.grid-muelles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 32px;
+.status-item{
+
+    background:#f8fafc;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    border:1px solid #e5e7eb;
+
 }
 
-.tarjeta {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 150px;
+.status-item:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
 }
 
-.muelle-ocupado {
-  border-top: 4px solid #ef4444;
+.status-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
 }
 
-.muelle-libre {
-  border-top: 4px solid #22c55e;
+.status-item h3{
+    color:#0f172a;
+    margin-bottom:15px;
+    font-size:1.15rem;
 }
 
-.tarjeta-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+.status-item p{
+    color:#2563eb;
+    font-size:2rem;
+    font-weight:bold;
 }
 
-.tarjeta-header h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #374151;
+.port-status-card hr{
+
+    margin:35px 0;
+    border:none;
+    height:1px;
+    background:#e5e7eb;
+
 }
 
-.etiqueta {
-  font-size: 12px;
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 4px;
+.security-section{
+
+    text-align:center;
+
 }
 
-.etiqueta-ocupado {
-  background-color: #ffeeec;
-  color: #dc2626;
+.security-section h2{
+
+    margin-bottom:25px;
+
+    color:#0f172a;
+
 }
 
-.etiqueta-libre {
-  background-color: #f0fdf4;
-  color: #16a34a;
+.progress-bar{
+
+    width:100%;
+
+    height:22px;
+
+    border-radius:20px;
+
+    background:#e2e8f0;
+
+    overflow:hidden;
+
 }
 
-.tarjeta-cuerpo p {
-  margin: 6px 0;
-  font-size: 14px;
-  color: #4b5563;
+.progress-fill{
+
+    height:100%;
+
+    width:0%;
+
+    transition:1s;
+
+    background:#22c55e;
+
 }
 
-.texto-disponible {
-  color: #9ca3af;
-  font-style: italic;
-  font-size: 14px;
-  margin: 0 0 12px 0;
+#securityValue{
+
+    margin-top:25px;
+
+    font-size:3rem;
+
+    color:#1343aa;
+
 }
 
-.boton-asignar {
-  width: 100%;
-  background-color: #16a34a;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
+#operationStatus{
+
+    margin-top:10px;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
 }
 
-.boton-asignar:hover {
-  background-color: #15803d;
+/*============================*/
+
+.recommendation{
+
+    text-align:center;
+
 }
 
-/* --- ESTILOS DE LA TABLA --- */
-.seccion-tabla {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.recommendation h2{
+
+    margin-bottom:20px;
+
+    color:#0f172a;
+
 }
 
-.tabla-titulo {
-  background-color: #f9fafb;
-  padding: 16px;
-  border-bottom: 1px solid #e5e7eb;
-}
+.recommendation p{
 
-.tabla-titulo h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #374151;
-}
+    max-width:650px;
 
-.tabla-contenedor {
-  overflow-x: auto;
-}
+    margin:auto;
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 14px;
-}
+    color:#475569;
 
-th {
-  background-color: #f3f4f6;
-  color: #4b5563;
-  padding: 12px 16px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
+    line-height:1.8;
 
-td {
-  padding: 14px 16px;
-  border-bottom: 1px solid #e5e7eb;
-  color: #4b5563;
-}
+    font-size:1.05rem;
 
-tr:hover {
-  background-color: #f9fafb;
 }
-
-.buque-nombre {
-  font-weight: bold;
-  color: #111827;
-}
-
-/* --- VENTANA MODAL --- */
-.modal-fondo {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-contenido {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-contenido h2 {
-  margin-top: 0;
-  font-size: 18px;
-  color: #1f2937;
-  margin-bottom: 20px;
-}
-
-.campo-formulario {
-  margin-bottom: 16px;
-}
-
-.campo-formulario label {
-  display: block;
-  font-size: 14px;
-  color: #4b5563;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
-
-.campo-formulario input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.modal-botones {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.boton-cancelar {
-  background-color: #e5e7eb;
-  color: #374151;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.boton-cancelar:hover {
-  background-color: #d1d5db;
-}
-
-.boton-guardar {
-  background-color: #22c55e;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.boton-guardar:hover {
-  background-color: #16a34a;
-}
-
 
 /* ================================
    MODAL TPM SMARTPORT
@@ -557,26 +494,45 @@ to{
 }
 
 }
+/*============================*/
 
 @media(max-width:768px){
-    .nav-menu{
-        display:none;
-    }
-    .nav-actions{
-        display:none;
-    }
-    .menu-toggle{
-        display:block;
-    }
-    .hero-section{
-        background-attachment:scroll;
-    }
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-    .footer-container{
-        flex-direction:column;
-        text-align:center;
-    }
+
+.status-grid{
+grid-template-columns:1fr;
+}
+
+.port-status-card{
+padding:25px;
+}
+
+#securityValue{
+font-size:2.3rem;
+}
+
+.nav-menu{
+    display:none;
+}
+
+.nav-actions{
+    display:none;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.hero-section{
+    background-attachment:scroll;
+}
+
+.services-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-container{
+    flex-direction:column;
+    text-align:center;
+}
 
 }

@@ -126,3 +126,26 @@ body {
 .btn-submit:hover {
     background-color: #1e253f;
 }
+
+@media(max-width:768px){
+    .nav-menu{
+        display:none;
+    }
+    .nav-actions{
+        display:none;
+    }
+    .menu-toggle{
+        display:block;
+    }
+    .hero-section{
+        background-attachment:scroll;
+    }
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
