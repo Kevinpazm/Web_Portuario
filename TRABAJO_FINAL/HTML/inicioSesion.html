@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/inicioSesion.css">
+    <script>
+    function iniciarSesion() {
+    const correo = document.getElementById('correo');
+    const password = document.getElementById('password');
+
+    if (correo.checkValidity() && password.checkValidity()) {
+        localStorage.setItem('estaLogueado', 'true');
+        window.location.href = 'Estado-Del-Puerto.html';
+    } else {
+        correo.reportValidity();
+        password.reportValidity();
+    }
+}
+</script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+        <!-- Botón hamburguesa -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
+                <a href="control-atraques.html">Control de atraques</a>
+                <a href="Servicios.html">Servicios</a>
+            </nav>
+        </div>
+    </header>
+    <section id="cotizacion" class="quote-section">
+        <div class="quote-card">
+            <form action="#" method="post">
+                <div class="form-group">
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" placeholder="ejemplo@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Contraseña">Contraseña:</label>
+                            <input type="password" id="password" placeholder="Asdqfg1234" required>
+                        </div>
+                        <button type="button" id="btn-login" class="btn-submit" onclick="iniciarSesion()">INICIAR SESIÓN</button>   
+            </form>
+        </div>
+    </section>
+</body>
+</html>

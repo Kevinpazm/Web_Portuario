@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Atraques - Puerto de Manta</title>
+  <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/control-atraques.css">
+</head>
+<body class="fondo-pagina">
+  
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+      <nav class="nav-menu" id="nav-menu">
+          <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
+          <a href="control-atraques.html">Control de atraques</a>
+          <a href="Servicios.html">Servicios</a>
+          <a href="inicioSesion.html" class="btn-login">Iniciar Sesión</a>
+      </nav>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+  </header>
+    <div class="side-menu" id="side-menu">
+      <div class="side-header">
+        <span>TPM SmartPort</span>
+        <button id="close-menu">✕</button>
+      </div>
+    <a href="Estado-Del-Puerto.html">🚢 Estado del Puerto</a>
+    <a href="control-atraques.html">⚓ Control de atraques</a>
+    <a href="Servicios.html">📦 Servicios</a>
+    <hr>
+    <a href="inicioSesion.html" class="btn-login side-login">
+        👤 Iniciar Sesión
+    </a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+  <div class="contenedor">
+    
+    <div class="encabezado-seccion">
+      <h2>Panel Operativo: Gestión de Muelles</h2>
+      <p>Monitoreo en tiempo real y asignación de embarcaciones.</p>
+    </div>
+
+    <div class="grid-muelles">
+      
+      <div class="tarjeta muelle-ocupado">
+        <div class="tarjeta-header">
+          <h3>Muelle Internacional 1</h3>
+          <span class="etiqueta etiqueta-ocupado">Ocupado</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <p><strong>Buque:</strong> Stella Maris II</p>
+          <p><strong>Tipo:</strong> Pesquero Industrial</p>
+          <p><strong>Arribo:</strong> Hoy - 14:30</p>
+        </div>
+      </div>
+
+      <div id="muelle-2" class="tarjeta muelle-libre">
+        <div class="tarjeta-header">
+          <h3>Muelle Internacional 2</h3>
+          <span id="estado-muelle-2" class="etiqueta etiqueta-libre">Disponible</span>
+        </div>
+        <div id="contenido-muelle-2" class="tarjeta-cuerpo">
+          <p class="texto-disponible">Sin embarcaciones asignadas en este momento.</p>
+          <button class="boton-asignar" onclick="abrirModal()">Asignar Buque</button>
+        </div>
+      </div>
+
+      <div class="tarjeta muelle-ocupado">
+        <div class="tarjeta-header">
+          <h3>Muelle Pesquero</h3>
+          <span class="etiqueta etiqueta-ocupado">Ocupado</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <p><strong>Buque:</strong> Don Pacífico</p>
+          <p><strong>Tipo:</strong> Atunero</p>
+          <p><strong>Arribo:</strong> Hoy - 06:15</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seccion-tabla">
+      <div class="tabla-titulo">
+        <h3>Historial de Últimos 5 Zarpes</h3>
+      </div>
+      
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Buque</th>
+              <th>Muelle de Origen</th>
+              <th>Fecha y Hora</th>
+              <th>Destino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="buque-nombre">Pacific Ocean</td>
+              <td>Muelle Internacional 1</td>
+              <td>03/07/2026 - 05:20</td>
+              <td>Alta Mar</td>
+            </tr>
+            <tr>
+              <td class="buque-nombre">Niña Martha</td>
+              <td>Muelle Pesquero</td>
+              <td>02/07/2026 - 19:40</td>
+              <td>Guayaquil</td>
+            </tr>
+            <tr>
+              <td class="buque-nombre">Sea Wolf</td>
+              <td>Muelle Internacional 2</td>
+              <td>02/07/2026 - 11:15</td>
+              <td>Manta Anclaje</td>
+            </tr>
+            <tr>
+              <td class="buque-nombre">Albacora I</td>
+              <td>Muelle Pesquero</td>
+              <td>01/07/2026 - 23:00</td>
+              <td>Alta Mar</td>
+            </tr>
+            <tr>
+              <td class="buque-nombre">Poseidón</td>
+              <td>Muelle Internacional 1</td>
+              <td>01/07/2026 - 16:45</td>
+              <td>Paita, Perú</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="modal-asignar" class="modal-fondo">
+    <div class="modal-contenido">
+      <h2>Asignar Buque a Muelle 2</h2>
+      
+      <form id="formulario-asignacion" onsubmit="guardarBuque(event)">
+        <div class="campo-formulario">
+          <label for="nombre-buque">Nombre del Buque:</label>
+          <input type="text" id="nombre-buque" required placeholder="Ej. El Corsario">
+        </div>
+        
+        <div class="campo-formulario">
+          <label for="tipo-buque">Tipo de Embarcación:</label>
+          <input type="text" id="tipo-buque" required placeholder="Ej. Atunero / Carga">
+        </div>
+
+        <div class="modal-botones">
+          <button type="button" class="boton-cancelar" onclick="cerrarModal()">Cancelar</button>
+          <button type="submit" class="boton-guardar">Confirmar Asignación</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<div id="modalLogin" class="modal-login">
+    <div class="modal-login-content">
+        <div class="modal-icon">⚓</div>
+        <h2>Acceso Restringido</h2>
+        <p>
+            Esta sección pertenece a TPM SmartPort. Inicia sesión para continuar.
+        </p>
+        <button onclick="irLogin()">Iniciar Sesión</button>
+        <span onclick="cerrarModal()">Cancelar</span>
+    </div>
+</div>
+  <script>
+    function abrirModal() {
+      document.getElementById('modal-asignar').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modal-asignar').style.display = 'none';
+      document.getElementById('formulario-asignacion').reset();
+    }
+
+    function guardarBuque(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre-buque').value;
+      const tipo = document.getElementById('tipo-buque').value;
+      
+      const ahora = new Date();
+      const horaFormateada = ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      const tarjetaMuelle = document.getElementById('muelle-2');
+      const etiquetaEstado = document.getElementById('estado-muelle-2');
+      const cuerpoTarjeta = document.getElementById('contenido-muelle-2');
+
+      tarjetaMuelle.classList.remove('muelle-libre');
+      tarjetaMuelle.classList.add('muelle-ocupado');
+
+      etiquetaEstado.classList.remove('etiqueta-libre');
+      etiquetaEstado.classList.add('etiqueta-ocupado');
+      etiquetaEstado.textContent = 'Ocupado';
+
+      cuerpoTarjeta.innerHTML = `
+        <p><strong>Buque:</strong> ${nombre}</p>
+        <p><strong>Tipo:</strong> ${tipo}</p>
+        <p><strong>Arribo:</strong> Hoy - ${horaFormateada}</p>
+      `;
+
+      cerrarModal();
+    }
+  </script>
+  <script src="/TRABAJO_FINAL/SCRIPT/Menu.js"></script>
+  <script src="/TRABAJO_FINAL/SCRIPT/script-login.js"></script>
+  <script>
+       protegerPagina();
+    </script>
+  
+</body>
+</html>

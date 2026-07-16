@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación en Control Portuario</title>
+    <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Style-principal.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
+                <a href="control-atraques.html">Control de atraques</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="inicioSesion.html" class="btn-login">Iniciar Sesión</a>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+    </header>
+    <div class="side-menu" id="side-menu">
+    <div class="side-header">
+        <span>TPM SmartPort</span>
+        <button id="close-menu">✕</button>
+    </div>
+    <a href="Estado-Del-Puerto.html">🚢 Estado del Puerto</a>
+    <a href="control-atraques.html">⚓ Control de atraques</a>
+    <a href="Servicios.html">📦 Servicios</a>
+    <hr>
+    <a href="inicioSesion.html" class="btn-login side-login">
+        👤 Iniciar Sesión
+    </a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Digitalizamos el Futuro Marítimo</h1>
+            <p>Monitoreo satelital en tiempo real, gestión inteligente de carga de atún y automatización logística para la industria portuaria moderna.</p>
+        </div>
+    </section>
+
+    <section id="servicios" class="services-section">
+        <div class="section-title">
+            <h2>Nuestras Soluciones Tecnológicas</h2>
+            <p>TPM SmartPort integra herramientas digitales para mejorar la administración de las operaciones marítimas del Puerto de Manta, proporcionando información en tiempo real, monitoreo de embarcaciones, control de atraques y análisis operativo que contribuyen a una gestión eficiente, segura y moderna.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-icon">🚢</div>
+                <h3>Control de Tráfico</h3>
+                <p>Supervisión en tiempo real del ingreso y salida de embarcaciones mediante sistemas de monitoreo marítimo. 
+                    Permite optimizar la navegación, reducir tiempos de espera y garantizar una operación segura dentro del Puerto de Manta.</p>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">🐟</div>
+                <h3>Logística de Carga</h3>
+                <p>Gestión eficiente de la carga de exportación e importación, incluyendo productos pesqueros, contenedores, carga a granel y mercancía general. 
+                    El sistema optimiza los procesos de recepción, almacenamiento y despacho.</p>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">🌊</div>
+                <h3>Estado Marítimo</h3>
+                <p>Consulta en tiempo real de las condiciones del mar, altura de las olas, velocidad del viento y temperatura del agua para apoyar la planificación de las operaciones portuarias y la seguridad de la navegación.</p>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">⚓</div>
+                <h3>Gestión de Atraques</h3>
+                <p>Administración inteligente de los muelles disponibles mediante la asignación de espacios de atraque según la disponibilidad, 
+                    el tipo de embarcación y la prioridad operativa, reduciendo tiempos de espera.</p>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">📊</div>
+                <h3>Indicadores Operativos</h3>
+                <p>Visualización de indicadores del puerto como número de buques atendidos, toneladas movilizadas, ocupación de muelles y movimiento mensual de carga para facilitar la toma de decisiones.</p>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">🔔</div>
+                <h3>Alertas Inteligentes</h3>
+                <p>Sistema automático de notificaciones sobre cambios en las condiciones meteorológicas, congestión portuaria, retrasos operativos y eventos relevantes que puedan afectar las actividades del puerto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cotizacion" class="quote-section">
+        <div class="quote-card">
+            <h2>Cotizacion</h2>
+            <p class="quote-subtitle">Completa y rellena todos tus datos personales para que puedas ingresar con nosotros.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="producto">Producto que Desea Cotizar:</label>
+                    <select id="producto" required>
+                        <option value="" disabled selected>Seleccione un producto --</option>
+                        <option value="atun">Lomos de Atún Premium</option>
+                        <option value="granel">Carga a Granel (Minerales/Granos)</option>
+                        <option value="vehiculos">Logística y Traslado de Vehículos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="volumen">Volumen Requerido (en Toneladas Métricas):</label>
+                    <input type="text" id="volumen" placeholder="Ej. 25" required>
+                </div>
+
+                <a href="Index.html"><button type="submit" class="btn-submit">ENVIAR SOLICITUD DE COMPRA</button></a>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 PescaManta S.A. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Soporte Técnico</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/TRABAJO_FINAL/SCRIPT/Menu.js"></script>
+    <script src="/TRABAJO_FINAL/SCRIPT/script-login.js"></script>
+
+</body>
+</html>

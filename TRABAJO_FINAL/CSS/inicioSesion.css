@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-dark: #030712;
+    --card-bg: #111827;
+    --text-white: #ffffff;
+    --text-muted: #9ca3af;
+    --accent-blue: #1343aa;
+    --accent-cyan: #23a7be;
+    --gradient-btn: linear-gradient(135deg, #222388, #5995f7);
+    --form-blue-bg: #0b3c7a; /* Color de fondo azul profundo exacto para la sección del formulario */
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* ==========================================================================
+   1. NAVEGACIÓN (Navbar)
+   ========================================================================== */
+.navbar {
+    background-color: rgba(3, 7, 18, 0.9);
+    backdrop-filter: blur(10px);
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text-white);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent-cyan);
+}
+
+.nav-menu {
+    margin-right: auto;
+    margin-left: 250px;
+    display: flex;
+}
+
+.nav-menu a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--text-white);
+}
+
+.quote-section {
+    background-color: #f8fafc;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 580px; /* Tamaño exacto de tarjeta compacta */
+    border-radius: 8px;
+    padding: 35px 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #334155;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black; 
+    color: #E0E0E0;       
+    text-decoration: none;
+    border-radius: 5px;    
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #1e253f;
+}
+
+@media(max-width:768px){
+    .nav-menu{
+        display:none;
+    }
+    .nav-actions{
+        display:none;
+    }
+    .menu-toggle{
+        display:block;
+    }
+    .hero-section{
+        background-attachment:scroll;
+    }
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}

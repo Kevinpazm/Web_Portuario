@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/TRABAJO_FINAL/CSS/Estado-Del-Puerto.css">
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="logo">TPM Smart<span>Port</span></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="Estado-Del-Puerto.html">Estado Del Puerto</a>
+                <a href="control-atraques.html">Control de atraques</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="inicioSesion.html" class="btn-login">Iniciar Sesión</a>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+    </header>
+    <div class="side-menu" id="side-menu">
+    <div class="side-header">
+        <span>TPM SmartPort</span>
+        <button id="close-menu">✕</button>
+    </div>
+    <a href="Estado-Del-Puerto.html">🚢 Estado del Puerto</a>
+    <a href="control-atraques.html">⚓ Control de atraques</a>
+    <a href="Servicios.html">📦 Servicios</a>
+    <hr>
+    <a href="inicioSesion.html" class="btn-login side-login">
+        👤 Iniciar Sesión
+    </a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+    <section class="port-status-section" id="estado-puerto">
+
+    <div class="section-title">
+        <h2>Estado del Puerto</h2>
+        <p>
+            Monitoreo en tiempo real de las condiciones marítimas
+            para apoyar la toma de decisiones operativas.
+        </p>
+    </div>
+
+    <div class="port-status-card">
+
+        <!-- Datos obtenidos desde la API -->
+
+        <div class="status-grid">
+
+            <div class="status-item">
+                <div class="status-icon">🌊</div>
+                <h3>Altura de las Olas</h3>
+                <p id="waveHeight">Cargando...</p>
+            </div>
+
+            <div class="status-item">
+                <div class="status-icon">💨</div>
+                <h3>Velocidad del Viento</h3>
+                <p id="windSpeed">Cargando...</p>
+            </div>
+
+            <div class="status-item">
+                <div class="status-icon">🌡️</div>
+                <h3>Temperatura del Agua</h3>
+                <p id="seaTemp">Cargando...</p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Índice -->
+
+        <div class="security-section">
+
+            <h2>Índice de Seguridad</h2>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill"
+                    style="width:0%;">
+                </div>
+
+            </div>
+
+            <h1 id="securityValue">0%</h1>
+
+            <h3 id="operationStatus">
+                Calculando...
+            </h3>
+
+        </div>
+
+        <hr>
+
+        <!-- Recomendación -->
+
+        <div class="recommendation">
+
+            <h2>Recomendación</h2>
+
+            <p id="recommendationText">
+
+                Analizando las condiciones marítimas...
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div id="modalLogin" class="modal-login">
+    <div class="modal-login-content">
+        <div class="modal-icon">⚓</div>
+        <h2>Acceso Restringido</h2>
+        <p>
+            Esta sección pertenece a TPM SmartPort. Inicia sesión para continuar.
+        </p>
+        <button onclick="irLogin()">Iniciar Sesión</button>
+        <span onclick="cerrarModal()">Cancelar</span>
+    </div>
+</div>
+    <script src="/TRABAJO_FINAL/SCRIPT/Script-EstadoDelPuerto.js"></script>
+    <script src="/TRABAJO_FINAL/SCRIPT/Menu.js"></script>
+    <script src="/TRABAJO_FINAL/SCRIPT/script-login.js"></script>
+    <script>
+       protegerPagina();
+    </script>
+
+</body>
+
+</html>
